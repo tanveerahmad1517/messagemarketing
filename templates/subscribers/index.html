@@ -1,0 +1,24 @@
+{% extends "subscribers/base.html" %}
+
+{% block content %}
+
+<h1>SMS Notifications</h1>
+<p>
+  Use this form to send MMS notifications to any subscribers.
+
+</p>
+<form action="/subscribers/notify/" method="POST">
+  <!-- The text of the message to send-->
+  <div class="form-group">
+    <label for="message">Enter a message</label>
+    <input type="text" name="message" placeholder="Hi there, gorgeous ;)" class="form-control"/>
+  </div>
+  <!-- An optional image URL-->
+  <div class="form-group">
+    <label for="imageUrl">(Optional) Image URL to send in an MMS</label>
+    <input type="text" name="imageUrl" placeholder="http://fake.twilio.com/some_image.png" class="form-control"/>
+  </div>
+  <button type="submit" class="btn btn-primary">Send Yourself a Message!</button>
+</form>
+
+{% endblock %}
